@@ -38,7 +38,6 @@ def create_train_test_set(df_Stock):
     features = df_Stock.drop(columns=['Close_forcast'], axis=1)
     target = df_Stock['Close_forcast']
     
-
     data_len = df_Stock.shape[0]
     print('Historical Stock Data length is - ', str(data_len))
 
@@ -101,7 +100,6 @@ print('Validation MAPE:', round(get_mape(Y_val,Y_val_pred), 2))
 print('Validation Mean Squared Error:', round(metrics.mean_squared_error(Y_train,Y_train_pred), 2)) 
 print("Validation RMSE: ",round(np.sqrt(metrics.mean_squared_error(Y_val,Y_val_pred)),2))
 print("Validation MAE: ",round(metrics.mean_absolute_error(Y_val,Y_val_pred),2))
-
 print(' ')
 
 print("Test R-squared: ",round(metrics.r2_score(Y_test,Y_test_pred),2))
